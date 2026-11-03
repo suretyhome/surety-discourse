@@ -50,17 +50,53 @@ export default <template>
 
         <div class="heel">
           <p>© 2013-{{(currentYear)}} SuretyCAM, LLC. All Rights Reserved.</p>
+          {{! Shared accounts first, then each brand's own accounts under a label }}
           <div class="social">
-            <a
-              class="c-social"
-              target="_blank"
-              href="https://www.youtube.com/c/surety"
-            >
-              <img src={{settings.theme_uploads.youtube}} alt="YouTube" />
-            </a>
-            <a class="c-social" target="_blank" href="https://x.com/suretyhome">
-              <img src={{settings.theme_uploads.x}} alt="X" />
-            </a>
+            <div class="social__group">
+              <div class="social__icons">
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://www.youtube.com/c/surety"
+                >
+                  <img src={{settings.theme_uploads.youtube}} alt="YouTube" />
+                </a>
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://www.linkedin.com/company/surety-home-business-security"
+                >
+                  <img src={{settings.theme_uploads.linkedin}} alt="LinkedIn" />
+                </a>
+              </div>
+            </div>
+            <div class="social__group">
+              <span class="social__label">Surety Home</span>
+              <div class="social__icons">
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://x.com/suretyhome"
+                >
+                  <img src={{settings.theme_uploads.x}} alt="Surety Home on X" />
+                </a>
+              </div>
+            </div>
+            <div class="social__group">
+              <span class="social__label">Surety Business</span>
+              <div class="social__icons">
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://x.com/Surety_Business"
+                >
+                  <img
+                    src={{settings.theme_uploads.x}}
+                    alt="Surety Business on X"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
