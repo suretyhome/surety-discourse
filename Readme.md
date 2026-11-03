@@ -1,7 +1,5 @@
-Surety Forum Theme
-==================
-
-The Discourse theme for the Surety Support Forum at <https://support.suretyhome.com>.
+Discourse Theme
+===============
 
 ## Layout
 
@@ -21,7 +19,7 @@ Matomo tracking comes from the separate [discourse-matomo-analytics](https://git
 
 - **All content lives in this repo.** The theme has no admin-editable settings (`settings.yml`). Change banner text, links and social accounts in the templates, so every change is reviewed and versioned.
 - **Use `.gjs` for templates and api-initializers for JavaScript.** Discourse no longer runs `<script type="text/discourse-plugin">` tags and is removing `.hbs` support.
-- **Keep the username masking.** The "Surety Specific User Masking" rules in `common/common.scss` hide `@usernames` from non-staff, because many older customer accounts use an email address or other personal information as their username. After Discourse upgrades, check that a logged-in regular user still can't see usernames on user cards, profiles and posts.
+- **Keep the username masking.** The user masking rules in `common/common.scss` hide `@usernames` from non-staff so only display names show. They're intentional; don't remove them. After Discourse upgrades, check that a logged-in regular user still can't see usernames on user cards, profiles and posts.
 - **Pick class names that nothing else uses.** `.gjs` connectors have no wrapper element, so core and plugin styles apply to our markup directly. Two names caused bugs:
   - `c-footer` is a sticky footer in Discourse Chat; ours is `surety-footer`.
   - `c-ad` is hidden by ad blockers (EasyList `##.c-ad`); the banner is `c-welcome`.
@@ -31,10 +29,10 @@ Matomo tracking comes from the separate [discourse-matomo-analytics](https://git
 
 ## Deploying
 
-The theme is installed in Discourse from this public repo over HTTPS, so no deploy key is needed.
+Install the theme in Discourse from this repo's HTTPS URL; no deploy key is needed.
 
 1. Bump `theme_version` in `about.json`, commit and push to `main`.
-2. In Discourse, go to Admin → Customize → Themes → Surety Support Forum and click **Update**. **Check for updates** is slow and only needed when you don't know whether there's something new.
+2. In Discourse, go to Admin → Customize → Themes, open the theme and click **Update**. **Check for updates** is slow and only needed when you don't know whether there's something new.
 3. Check the homepage, a topic page and the About page, and look for deprecation warnings in the browser console.
 
 To roll back, `git revert` the commit, push, and update the theme again.
