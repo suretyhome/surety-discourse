@@ -1,9 +1,0 @@
-<script type="text/discourse-plugin" version="0.8">
-  api.onPageChange((url) => {
-    if ((url === "/") || (url === "/latest") || (url.indexOf('?') === 1) || url.match(/\/c\//)){
-     document.querySelector("body").classList.add("no-footer")
-    } else {
-     document.querySelector("body").classList.remove("no-footer")
-    }
-  });
-</script>
