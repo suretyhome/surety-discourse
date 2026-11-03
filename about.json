@@ -2,15 +2,13 @@
   "name": "Surety Support Forum",
   "about_url": "https://suretyhome.com",
   "authors": "Surety",
-  "theme_version": "1.10",
+  "theme_version": "1.11",
   "license_url": null,
   "assets": {
     "surety-flair-badge" : "assets/surety-flair-logo.png",
     "surety-logo-white-v3" : "assets/surety-logo-white-v3.svg",
-    "facebook" : "assets/facebook.svg",
     "youtube" :  "assets/youtube.svg",
-    "instagram" : "assets/instagram.svg",
-    "twitter" :  "assets/twitter.svg"
+    "x" : "assets/x.svg"
   },
   "color_schemes": {
     "Primary Color Scheme": {

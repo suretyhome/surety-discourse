@@ -164,8 +164,24 @@ body {
     }
 }
 
-.about-after-description-outlet {
+.about-description-content {
     margin-bottom: 40px;
+
+    h2 {
+        scroll-margin-top: calc(var(--header-offset, 60px) + 1rem);
+    }
+}
+
+/** Welcome Banner **/
+.c-welcome header {
+    a {
+        color: map_get($additional-colors, "white");
+        text-decoration: underline;
+    }
+
+    h4 p {
+        margin-bottom: 0;
+    }
 }
 
 /** Advertisements (the welcome banner shares these styles; c-ad is hidden by ad blockers) **/
