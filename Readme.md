@@ -1,17 +1,48 @@
 Surety Forum Theme
 ==================
 
-## Development Environment
+The Discourse theme for the Surety Support Forum at <https://support.suretyhome.com>.
 
-[<https://theme-creator.discourse.org>] offers a fantastic environment for developing a theme with sample content and live updating.  Here's how to get things up and running.
+## Layout
 
-1. Install the Discourse Theme Command Line Tool: `sudo gem install discourse_theme` (First time only)
-2. Within this folder, run `discourse_theme watch .`
-    * The first time, you will be prompted to enter a URL and API Keys if you do not yet have a `~/.discourse_theme` configuration file established.  If you do, you can choose one of the themes to start watching.
-3. Any changes to this folder will be automatically updated.  Login to [Discourse Theme Creator](https://theme-creator.discourse.org) to get the preview link for this theme.
+| Path | What it is |
+|---|---|
+| `javascripts/discourse/connectors/above-main-container/surety-main-banner.gjs` | Welcome banner with Helpful Links |
+| `javascripts/discourse/connectors/below-footer/surety-nav-footer.gjs` | Footer: site links, copyright and social icons |
+| `javascripts/discourse/connectors/about-after-description/surety-main-description.gjs` | About page content |
+| `javascripts/discourse/api-initializers/no-footer.js` | Hides the footer on infinite scroll pages |
+| `javascripts/discourse/api-initializers/global-privacy-control.js` | Stops Matomo tracking for browsers sending Global Privacy Control |
+| `common/`, `desktop/`, `mobile/` | Stylesheets, plus the font link in `common/head_tag.html` |
+| `assets/` | Images, registered in `about.json` and used via `settings.theme_uploads` |
 
-## Style Guide
+Matomo tracking comes from the separate [discourse-matomo-analytics](https://github.com/discourse/discourse-matomo-analytics) theme component, not from this repo.
 
-A Style Guide is also available, simply go to this link, replacing `XXXX` with the 4-digit code for the theme.  [<https://theme-creator.discourse.org/styleguide?preview_theme_id=XXXX>]
+## Conventions
 
-The 4-digit code can be found by clicking “Preview” in the Theme Creator under your theme. 
+- **All content lives in this repo.** The theme has no admin-editable settings (`settings.yml`). Change banner text, links and social accounts in the templates, so every change is reviewed and versioned.
+- **Use `.gjs` for templates and api-initializers for JavaScript.** Discourse no longer runs `<script type="text/discourse-plugin">` tags and is removing `.hbs` support.
+- **Keep the username masking.** The "Surety Specific User Masking" rules in `common/common.scss` hide `@usernames` from non-staff, because many older customer accounts use an email address or other personal information as their username. After Discourse upgrades, check that a logged-in regular user still can't see usernames on user cards, profiles and posts.
+- **Pick class names that nothing else uses.** `.gjs` connectors have no wrapper element, so core and plugin styles apply to our markup directly. Two names caused bugs:
+  - `c-footer` is a sticky footer in Discourse Chat; ours is `surety-footer`.
+  - `c-ad` is hidden by ad blockers (EasyList `##.c-ad`); the banner is `c-welcome`.
+
+  Avoid ad-like names such as `ad`, `banner` and `promo`.
+- **Avoid deprecated Sass functions** such as `lighten()` and `map_get()`. Use plain variables and CSS functions, which also follow the active color scheme.
+
+## Deploying
+
+The theme is installed in Discourse from this public repo over HTTPS, so no deploy key is needed.
+
+1. Bump `theme_version` in `about.json`, commit and push to `main`.
+2. In Discourse, go to Admin → Customize → Themes → Surety Support Forum and click **Update**. **Check for updates** is slow and only needed when you don't know whether there's something new.
+3. Check the homepage, a topic page and the About page, and look for deprecation warnings in the browser console.
+
+To roll back, `git revert` the commit, push, and update the theme again.
+
+## Development
+
+To preview changes without pushing, use the [Discourse Theme CLI](https://meta.discourse.org/t/discourse-theme-cli/82950):
+
+1. Install it once: `gem install discourse_theme`
+2. Run `discourse_theme watch .` in this folder. The first time, it asks for the site URL and an API key.
+3. Point it at a separate test theme, not the live one, and preview that theme while you work. Each save uploads your changes.

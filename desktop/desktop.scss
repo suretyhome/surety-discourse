@@ -1,5 +1,7 @@
 /** Variables **/
-$font-weights: ("light": 300, "regular": 400, "bold": 700);
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
 
 /** Global **/
 
@@ -11,7 +13,7 @@ $font-weights: ("light": 300, "regular": 400, "bold": 700);
 .b-header {
 
     .links {
-        font-weight: map_get($font-weights, 'bold');
+        font-weight: $font-weight-bold;
     }
 
     .title {

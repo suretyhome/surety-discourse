@@ -1,34 +1,35 @@
 /** Variables **/
-$font-weights: ("light": 300, "regular": 400, "bold": 700);
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
 
-$additional-colors: ("white": #fff, "dark-gray": #424448);
+$color-white: #fff;
+$color-dark-gray: #424448;
 
-$defaults: (
-        "border-radius": 8px,
-        "transition": all 0.125s ease-out
-);
+$border-radius: 8px;
+$transition: all 0.125s ease-out;
 
 /** Global **/
 body {
     font-family: 'Montserrat', sans-serif;
-    font-weight: map_get($font-weights, 'regular');
+    font-weight: $font-weight-regular;
 }
 
 /** Elements **/
 .c-btn, a.c-btn {
     display: block;
     padding: 1.0em 1.75em;
-    color: map_get($additional-colors, 'white');
+    color: $color-white;
     background-color: $quaternary;
     font-size: 1em;
     line-height: 1;
     text-align: center;
-    border-radius: map_get($defaults, 'border-radius');
-    font-weight: map_get($font-weights, 'bold');
-    transition: map_get($defaults, 'transition');
+    border-radius: $border-radius;
+    font-weight: $font-weight-bold;
+    transition: $transition;
 
     &:hover {
-        background-color: lighten($quaternary, 4%);
+        background-color: hsl(from var(--quaternary) h s calc(l + 4));
     }
 }
 
@@ -37,12 +38,12 @@ body {
     width: 2em;
     height: 2em;
     margin: 0.75em 0 0 0.5em;
-    color: map_get($additional-colors, 'white');
+    color: $color-white;
 
     img {
         display: block;
         width: 100%;
-        color: map_get($additional-colors, 'white');
+        color: $color-white;
     }
 }
 
@@ -79,14 +80,14 @@ body {
     background-color: $quaternary;
 
     .links {
-        font-weight: map_get($font-weights, 'bold');
+        font-weight: $font-weight-bold;
     }
 }
 
 /** Footer **/
 /** Not .c-footer: Discourse Chat styles that class as a sticky composer footer **/
 .surety-footer {
-    background-color: map_get($additional-colors, 'dark-gray');
+    background-color: $color-dark-gray;
     padding: 4rem 0 2rem;
     font-size: 16px;
 
@@ -208,7 +209,7 @@ body {
 /** Welcome Banner **/
 .c-welcome header {
     a {
-        color: map_get($additional-colors, "white");
+        color: $color-white;
         text-decoration: underline;
     }
 
@@ -223,7 +224,7 @@ body {
     padding: 2rem;
     margin-bottom: 1rem;
     background-color: $tertiary;
-    color: map_get($additional-colors, "white");
+    color: $color-white;
     clear: both;
 
     &--large, &--banner {
@@ -284,7 +285,7 @@ body {
     h2 {
         font-size: 2.8125em;
         line-height: 1.1;
-        font-weight: map_get($font-weights, 'bold');
+        font-weight: $font-weight-bold;
 
         @media (max-width: 700px) {
             font-size: 1.8em;
@@ -293,13 +294,13 @@ body {
 
     h3 {
         font-size: 1.25em;
-        font-weight: map_get($font-weights, 'bold');
+        font-weight: $font-weight-bold;
     }
 
     h4 {
         font-size: 1.25em;
         line-height: 1.5;
-        font-weight: map_get($font-weights, 'light');
+        font-weight: $font-weight-light;
 
         @media (max-width: 700px) {
             font-size: 1em;
