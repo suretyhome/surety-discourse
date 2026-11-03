@@ -84,7 +84,8 @@ body {
 }
 
 /** Footer **/
-.c-footer {
+/** Not .c-footer: Discourse Chat styles that class as a sticky composer footer **/
+.surety-footer {
     background-color: map_get($additional-colors, 'dark-gray');
     padding: 4rem 0 2rem;
     font-size: 16px;

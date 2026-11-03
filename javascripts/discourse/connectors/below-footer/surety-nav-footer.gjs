@@ -3,9 +3,9 @@ import { get } from "@ember/helper";
 const currentYear = () => new Date().getFullYear();
 
 export default <template>
-  <div class="c-footer">
+  <div class="surety-footer">
     <div class="wrap">
-      <div class="c-footer__grid">
+      <div class="surety-footer__grid">
         <div class="logo">
           <img
             src={{get settings.theme_uploads "surety-logo-white-v3"}}
