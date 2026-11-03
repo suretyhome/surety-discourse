@@ -50,28 +50,29 @@ export default <template>
 
         <div class="heel">
           <p>© 2013-{{(currentYear)}} SuretyCAM, LLC. All Rights Reserved.</p>
-          {{! Shared accounts first, then each brand's own accounts under a label }}
+          {{! Shared accounts first, then each brand's own accounts }}
           <div class="social">
             <div class="social__group">
+              <span class="social__label">Surety</span>
               <div class="social__icons">
                 <a
                   class="c-social"
                   target="_blank"
                   href="https://www.youtube.com/c/surety"
                 >
-                  <img src={{settings.theme_uploads.youtube}} alt="YouTube" />
+                  <img src={{settings.theme_uploads.youtube}} alt="Surety on YouTube" />
                 </a>
                 <a
                   class="c-social"
                   target="_blank"
                   href="https://www.linkedin.com/company/surety-home-business-security"
                 >
-                  <img src={{settings.theme_uploads.linkedin}} alt="LinkedIn" />
+                  <img src={{settings.theme_uploads.linkedin}} alt="Surety on LinkedIn" />
                 </a>
               </div>
             </div>
             <div class="social__group">
-              <span class="social__label">Surety Home</span>
+              <span class="social__label">Home</span>
               <div class="social__icons">
                 <a
                   class="c-social"
@@ -80,10 +81,20 @@ export default <template>
                 >
                   <img src={{settings.theme_uploads.x}} alt="Surety Home on X" />
                 </a>
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://www.reddit.com/user/suretyhome/"
+                >
+                  <img
+                    src={{settings.theme_uploads.reddit}}
+                    alt="Surety Home on Reddit"
+                  />
+                </a>
               </div>
             </div>
             <div class="social__group">
-              <span class="social__label">Surety Business</span>
+              <span class="social__label">Business</span>
               <div class="social__icons">
                 <a
                   class="c-social"
@@ -93,6 +104,16 @@ export default <template>
                   <img
                     src={{settings.theme_uploads.x}}
                     alt="Surety Business on X"
+                  />
+                </a>
+                <a
+                  class="c-social"
+                  target="_blank"
+                  href="https://www.reddit.com/user/SuretyBusiness/"
+                >
+                  <img
+                    src={{settings.theme_uploads.reddit}}
+                    alt="Surety Business on Reddit"
                   />
                 </a>
               </div>
