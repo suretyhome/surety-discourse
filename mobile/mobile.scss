@@ -1,0 +1,43 @@
+/** Variables **/
+$font-weights: ("light": 300, "regular": 400, "bold": 700);
+
+/** Global **/
+
+/** Elements **/
+
+/** Header **/
+.b-header {
+    .header-dropdown-toggle .btn-flat .d-icon {
+        color: #fff;
+    }
+}
+
+/** Footer **/
+
+/** Advertisements **/
+.c-ad {
+    &--large {
+        justify-content: center;
+
+        header {
+            display: none;
+        }
+
+        &__body {
+            p {
+                display: none;
+            }
+        }
+
+        nav a:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &--bp {
+        .c-ad-copy {
+            text-align: center;
+            margin-bottom: 1.0rem;
+        }
+    }
+}

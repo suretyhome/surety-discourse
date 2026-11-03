@@ -1,0 +1,29 @@
+{
+  "name": "Surety Support Forum",
+  "about_url": "https://suretyhome.com",
+  "authors": "Surety",
+  "theme_version": "1.08",
+  "license_url": null,
+  "assets": {
+    "surety-flair-badge" : "assets/surety-flair-logo.png",
+    "surety-logo-white-v3" : "assets/surety-logo-white-v3.svg",
+    "facebook" : "assets/facebook.svg",
+    "youtube" :  "assets/youtube.svg",
+    "instagram" : "assets/instagram.svg",
+    "twitter" :  "assets/twitter.svg"
+  },
+  "color_schemes": {
+    "Primary Color Scheme": {
+      "primary": "424448",
+      "secondary": "ffffff",
+      "tertiary": "007db8",
+      "quaternary": "80bc00",
+      "header_background": "ffffff",
+      "header_primary": "333333",
+      "highlight": "ffff4d",
+      "danger": "e45735",
+      "success": "009900",
+      "love": "fa6c8d"
+    }
+  }
+}

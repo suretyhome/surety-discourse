@@ -1,0 +1,13 @@
+<script>
+$(document).ready(function () {
+  const initial_date = 2013;
+  const current_date = new Date();
+  const copyright_string = `${initial_date}-${current_date.getFullYear()}`;
+
+  const $current_date_el = $(document).find('.surety-current-date');
+
+  if($current_date_el) {
+	  $current_date_el.text(copyright_string);
+  }
+});
+</script>

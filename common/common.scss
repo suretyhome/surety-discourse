@@ -1,0 +1,341 @@
+/** Variables **/
+$font-weights: ("light": 300, "regular": 400, "bold": 700);
+
+$additional-colors: ("white": #fff, "dark-gray": #424448);
+
+$defaults: (
+        "border-radius": 8px,
+        "transition": all 0.125s ease-out
+);
+
+/** Global **/
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: map_get($font-weights, 'regular');
+}
+
+/** Elements **/
+.c-btn, a.c-btn {
+    display: block;
+    padding: 1.0em 1.75em;
+    color: map_get($additional-colors, 'white');
+    background-color: $quaternary;
+    font-size: 1em;
+    line-height: 1;
+    text-align: center;
+    border-radius: map_get($defaults, 'border-radius');
+    font-weight: map_get($font-weights, 'bold');
+    transition: map_get($defaults, 'transition');
+
+    &:hover {
+        background-color: lighten($quaternary, 4%);
+    }
+}
+
+.c-social {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    margin: 0.75em 0 0 0.5em;
+    color: map_get($additional-colors, 'white');
+
+    img {
+        display: block;
+        width: 100%;
+        color: map_get($additional-colors, 'white');
+    }
+}
+
+/** Header **/
+
+.b-header {
+    .title {
+        position: relative;
+        margin-left: 20px;
+
+        &:before {
+            font-size: 1.25em;
+            content: '\2190';
+            position: absolute;
+            right: 105%;
+            top: 50%;
+            transform: translateY(-55%);
+            color: #fff;
+        }
+
+        font-size: 0.5em;
+    }
+
+    .contents .panel, nav.links {
+        @media (max-width: 550px) {
+            display: none;
+        }
+    }
+}
+
+
+/** Notes: This Overrides the default styles in the Header Theme Component **/
+.b-header {
+    background-color: $quaternary;
+
+    .links {
+        font-weight: map_get($font-weights, 'bold');
+    }
+}
+
+/** Footer **/
+.c-footer {
+    background-color: map_get($additional-colors, 'dark-gray');
+    padding: 4rem 0 2rem;
+    font-size: 16px;
+
+    /** Don't show on infinite scroll pages **/
+    .no-footer & {
+        display: none;
+    }
+
+    &__grid {
+        display: grid;
+        grid-gap: 2rem 6rem;
+        grid-template-columns: 200px 1fr 1fr 1fr;
+
+        @media (max-width: 700px) {
+            grid-template-columns: 200px 1fr;
+        }
+
+        @media (max-width: 600px) {
+            display: block;
+            & > * {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    .heel {
+        display: flex;
+        justify-content: space-between;
+        grid-column: span 4;
+        border-top: 1px solid #B8C0C6;
+        font-size: 0.875em;
+
+        @media (max-width: 700px) {
+            grid-column: span 2;
+        }
+    }
+
+    h5 {
+        font-size: 1em;
+        margin-bottom: 1.0em;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        font-size: 1.0em;
+    }
+
+    li {
+        margin-bottom: 0.5em;
+    }
+
+    a, p {
+        color: #B8C0C6;
+    }
+
+    a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+
+    img {
+        display: block;
+        max-width: 150px;
+    }
+}
+
+/** Page Content **/
+
+/** Page: About **/
+.about.description {
+    margin-bottom: 0;
+    p:first-of-type {
+        display: none;
+    }
+}
+
+.about-after-description-outlet {
+    margin-bottom: 40px;
+}
+
+/** Advertisements **/
+.c-ad {
+    font-size: 16px;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    background-color: $tertiary;
+    color: map_get($additional-colors, "white");
+    clear: both;
+
+    &--large, &--banner {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+
+        @media (max-width: 700px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &--large {
+        &__body {
+            text-align: center;
+
+            p {
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                font-size: 1.125em;
+            }
+        }
+
+        nav a {
+            margin-bottom: 0.75em;
+        }
+    }
+
+    &--banner {
+        margin-top: 1.0rem;
+
+        @media(max-width: 700px) {
+            justify-content: center;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            *:first-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__body {
+            flex: 0 1 200px;
+
+            @media(max-width: 700px) {
+                margin-top: 1.0rem;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 2.8125em;
+        line-height: 1.1;
+        font-weight: map_get($font-weights, 'bold');
+
+        @media (max-width: 700px) {
+            font-size: 1.8em;
+        }
+    }
+
+    h3 {
+        font-size: 1.25em;
+        font-weight: map_get($font-weights, 'bold');
+    }
+
+    h4 {
+        font-size: 1.25em;
+        line-height: 1.5;
+        font-weight: map_get($font-weights, 'light');
+
+        @media (max-width: 700px) {
+            font-size: 1em;
+        }
+    }
+
+    &--bp {
+        max-width: 650px;
+
+        .c-ad-copy {
+            min-height: 48px;
+            font-weight: bold;
+        }
+    }
+}
+
+/** Surety Specific User Masking **/
+#user-card, .user-info {
+    .username {
+        body:not(.staff) & {
+            display: none;
+        }
+    }
+}
+
+.user-summary-page {
+    &:not(.staff) {
+        .details {
+            .username {
+                display: none;
+            }
+        }
+    }
+}
+
+.topic-meta-data {
+    &:not(.staff) {
+        .second.username {
+            display: none;
+        }
+    }
+}
+
+.avatar-flair-surety {
+    background-size: 100% !important;
+}
+
+.has-full-page-chat .c-ad {
+    display: none;
+}
+
+.chat-header-icon {
+    display: none;
+}
+
+.full-page-chat {
+    display: block;
+
+    .direct-message-channels-section, .channels-list {
+        display: none;
+    }
+
+    .c-navbar {
+        padding-left: 10px;
+
+        .c-navbar__back-button {
+            display: none;
+        }
+    }
+}
+
+.chat-drawer {
+    .c-navbar {
+        padding-left: 10px;
+
+        .c-navbar__back-button {
+            display: none;
+        }
+    }
+}
+
+#user-menu-button-chat-notifications {
+    display: none;
+}
+
+.chat-composer-button.-emoji {
+    display: none;
+}

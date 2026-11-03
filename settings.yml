@@ -1,0 +1,23 @@
+facebook:
+  type: string
+  default: "https://www.facebook.com/surety"
+youtube:
+  type: string
+  default: "https://www.youtube.com/c/surety"
+twitter:
+  type: string
+  default: "https://twitter.com/withsurety"
+instagram:
+  type: string
+  default: "https://www.instagram.com/withsurety/"
+banner_head_main:
+  type: string
+  default: "Welcome to the Surety Support Forum"
+banner_head_sub:
+  type: string
+  default: "The #1 resource for smart home & business security, Qolsys, 2GIG, and Alarm.com"
+  textarea: true
+content_about_main:
+  type: string
+  default: "Surety About Page Information"
+  textarea: true
