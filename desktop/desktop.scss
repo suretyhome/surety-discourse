@@ -58,7 +58,7 @@ $font-weights: ("light": 300, "regular": 400, "bold": 700);
 
 
 /** Advertisements **/
-.c-ad {
+.c-ad, .c-welcome {
     &--large {
         header {
             flex: 0 1 50%;
